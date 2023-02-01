@@ -3,6 +3,8 @@
 #include "ofMain.h"
 #include "visualScene.h"
 #include "vibratingCircle.hpp"
+#include "rotatingSquare.hpp"
+
 
 class ofApp : public ofBaseApp{
 

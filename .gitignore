@@ -2,4 +2,6 @@ bin/*
 !/bin/data
 *.DS_Store
 UniversalVisualSequencer.xcodeproj/*
-
+.vscode/*
+obj/*
+*.code-workspace
