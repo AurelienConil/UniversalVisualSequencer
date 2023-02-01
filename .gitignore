@@ -1,0 +1,5 @@
+bin/*
+!/bin/data
+*.DS_Store
+UniversalVisualSequencer.xcodeproj/*
+
