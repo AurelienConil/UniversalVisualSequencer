@@ -4,6 +4,7 @@
 #include "visualScene.h"
 #include "vibratingCircle.hpp"
 #include "rotatingSquare.hpp"
+#include "ofxOsc.h"
 
 
 class ofApp : public ofBaseApp{
@@ -27,5 +28,9 @@ class ofApp : public ofBaseApp{
     
     
         vector<shared_ptr<VisualScene>> listOfVisual;
+    
+    //create osc receiver
+    ofxOscReceiver receiver;
+    
 		
 };

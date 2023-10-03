@@ -73,7 +73,7 @@ void RotatingSquare::updateState()
 // define draw
 void RotatingSquare::draw()
 {
-
+    
     // draw a white square
     ofSetColor(255, 255, 255);
     // set thickness according to the current thickness
@@ -85,6 +85,15 @@ void RotatingSquare::draw()
     ofRotateZDeg(currentAngle);
     // draw a square
     ofDrawRectangle(-size / 2, -size / 2, size, size);
+    
+    //draw cicrcle at the center of the square
+    ofSetColor(255, 0, 0);
+    ofDrawCircle(0, 0, 10);
+    
+    
+    
 
     ofPopMatrix();
+    
+    
 }

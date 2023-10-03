@@ -1,4 +1,7 @@
 #include "ofApp.h"
+#define PORT 12345
+
+
 
 //--------------------------------------------------------------
 void ofApp::setup()
@@ -6,6 +9,10 @@ void ofApp::setup()
 
     listOfVisual.clear();
     ofSetVerticalSync(true);
+    
+    //setup osc receiver
+    receiver.setup(PORT);
+    
 }
 
 //--------------------------------------------------------------
@@ -30,6 +37,25 @@ void ofApp::update()
             ++itn;
         }
     }
+    
+    //handle reception of osc messages
+    while(receiver.hasWaitingMessages()){
+        //get the next message
+        ofxOscMessage m;
+        receiver.getNextMessage(m);
+        
+        //check for mouse moved message
+        if(m.getAddress() == "/basic/rotatingsquare"){
+            //both the arguments are int32's
+            int p1 = m.getArgAsInt32(0);
+            int p2 = m.getArgAsInt32(1);
+            
+            listOfVisual.push_back(make_shared<RotatingSquare>(p1, p2, 0, 0, 0, 0, 0, 0));
+            
+            
+        }
+    }
+
 }
 
 //--------------------------------------------------------------
